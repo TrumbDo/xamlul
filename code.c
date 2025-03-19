@@ -11,9 +11,9 @@ int nt(int n)
 }
 int main()
 {
-    int n = 112345;
-    int a[19];
-    int i = 0;
+    long long n;
+    int i = 0, a[18], counted[10] = {0};
+    scanf("%lld", &n);
     while(n > 0)
     {
         a[i] = n % 10;
@@ -22,7 +22,7 @@ int main()
     }
     for( int j = i - 1 ; j >=0 ; j--)
     {
-        if(nt(a[j]))
+        if( nt(a[j]) && !counted[a[j]])
         {
             int cnt = 0;
             for(int k = j; k >= 0; k--)
@@ -33,6 +33,7 @@ int main()
                 }
             }
             printf("%d %d\n",a[j], cnt);
+            counted[a[j]] = 1;
         }
     }
     return 0;
