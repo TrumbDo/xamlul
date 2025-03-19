@@ -20,23 +20,20 @@ int main()
         n /= 10;
         i++;
     }
-    i--;
-    for( ; i >=0 ; i--)
+    for( int j = i - 1 ; j >=0 ; j--)
     {
-        if(nt(a[i]))
+        if(nt(a[j]))
         {
-            printf("%d ", a[i]);
             int cnt = 0;
-            for(int j = i; j >= 0; j--)
+            for(int k = j; k >= 0; k--)
             {
-                if(a[i] == a[j])
+                if(a[j] == a[k])
                 {
                     cnt++;
                 }
             }
-            printf("%d", cnt);
-            printf("\n");
+            printf("%d %d\n",a[j], cnt);
         }
     }
-
+    return 0;
 }
