@@ -20,6 +20,7 @@ int main()
         n /= 10;
         i++;
     }
+    i--;
     for( ; i >=0 ; i--)
     {
         if(nt(a[i]))
